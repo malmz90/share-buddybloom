@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App</title>
+    <title>BuddyBloom - Download App</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -14,56 +14,84 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: #f5f7fa;
+            background: #0B4619;
+            /* Dark green background like your app */
         }
 
         .container {
             max-width: 600px;
             width: 100%;
             text-align: center;
-            padding: 20px;
-            background: white;
+            padding: 30px;
+            background: #0B4619;
+            /* Dark green background */
             border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             margin: 20px;
+            color: white;
         }
 
         .app-icon {
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
+            width: 150px;
+            height: 150px;
             margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            /* Circle like in your app */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
         h1 {
-            color: #333;
-            margin: 10px 0;
+            color: white;
+            margin: 20px 0;
+            font-size: 28px;
         }
 
         .download-button {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 15px 40px;
             margin: 20px 0;
-            border-radius: 8px;
-            background: #3DDC84;
-            color: white;
+            border-radius: 25px;
+            /* Rounded like your sign in button */
+            background: #00FF85;
+            /* Green accent color similar to your sign in button */
+            color: #0B4619;
+            /* Dark text on light button */
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 16px;
         }
 
         .download-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 255, 133, 0.3);
+        }
+
+        .device-warning {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 10px 0;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .instructions {
             margin: 20px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             text-align: left;
             line-height: 1.6;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .instructions h3 {
+            color: #00FF85;
+            margin-top: 0;
         }
 
         .instructions ol {
@@ -74,34 +102,60 @@
         .instructions li {
             margin: 10px 0;
         }
+
+        #pcInstructions,
+        #iosInstructions {
+            display: none;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="images/logo.png" alt="App Icon" class="app-icon">
+        <img src="images/logo.png" alt="BuddyBloom Logo" class="app-icon">
         <h1>BuddyBloom</h1>
-        <p>Download our Android app</p>
+        <p>Download our Android app to get started</p>
+
+        <div id="pcWarning" class="device-warning">
+            ⚠️ You're downloading from a PC. You'll need to transfer the APK to an Android device to install it.
+        </div>
+
+        <div id="iosWarning" class="device-warning">
+            ⚠️ This app is only available for Android devices. iOS devices are not supported.
+        </div>
 
         <a href="https://drive.google.com/uc?export=download&id=1jhs30gpLL3C3WUS9St5WGO-9WTsB4av4"
-            class="download-button">
+            class="download-button" id="downloadButton">
             Download App
         </a>
 
         <div class="instructions">
-            <h3>Installation Instructions:</h3>
-            <ol>
-                <li>Click the download button above</li>
-                <li>If prompted with a warning, click "Download anyway"</li>
-                <li>Open the downloaded APK file</li>
-                <li>If asked, allow installation from unknown sources:
-                    <ul>
-                        <li>Go to Settings > Security</li>
-                        <li>Enable "Unknown sources" or "Install unknown apps"</li>
-                    </ul>
-                </li>
-                <li>Click "Install" when prompted</li>
-            </ol>
+            <div id="androidInstructions">
+                <h3>Installation Instructions:</h3>
+                <ol>
+                    <li>Click the download button above</li>
+                    <li>If prompted with a warning, click "Download anyway"</li>
+                    <li>Open the downloaded APK file</li>
+                    <li>If asked, allow installation from unknown sources:
+                        <ul>
+                            <li>Go to Settings > Security</li>
+                            <li>Enable "Unknown sources" or "Install unknown apps"</li>
+                        </ul>
+                    </li>
+                    <li>Click "Install" when prompted</li>
+                </ol>
+            </div>
+
+            <div id="iosInstructions">
+                <h3>iOS Users:</h3>
+                <p>Sorry, this app is currently only available for Android devices. You'll need an Android device to use
+                    this app.</p>
+            </div>
         </div>
     </div>
 </body>
