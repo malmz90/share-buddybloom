@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f5f7fa;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #3DDC84;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .instructions {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="/api/placeholder/100/100" alt="App Icon" class="app-icon">
+        <h1>Your App Name</h1>
+        <p>Download our Android app</p>
+
+        <a href="https://drive.google.com/uc?export=download&id=1jhs30gpLL3C3WUS9St5WGO-9WTsB4av4"
+            class="download-button">
+            Download App
+        </a>
+
+        <div class="instructions">
+            <h3>Installation Instructions:</h3>
+            <ol>
+                <li>Click the download button above</li>
+                <li>If prompted with a warning, click "Download anyway"</li>
+                <li>Open the downloaded APK file</li>
+                <li>If asked, allow installation from unknown sources:
+                    <ul>
+                        <li>Go to Settings > Security</li>
+                        <li>Enable "Unknown sources" or "Install unknown apps"</li>
+                    </ul>
+                </li>
+                <li>Click "Install" when prompted</li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>
